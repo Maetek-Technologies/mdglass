@@ -1,5 +1,8 @@
 # mdglass
 
+[![npm version](https://img.shields.io/npm/v/mdglass.svg)](https://www.npmjs.com/package/mdglass)
+[![license: MIT](https://img.shields.io/npm/l/mdglass.svg)](https://github.com/Maetek-Technologies/mdglass/blob/main/LICENSE)
+
 GitHub-style Markdown rendering for TypeScript apps, built on
 [markdown-it](https://github.com/markdown-it/markdown-it) with a small plugin system:
 
