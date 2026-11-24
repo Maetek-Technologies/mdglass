@@ -1,0 +1,146 @@
+/*
+ * mdglass — styles for the elements the plugins add.
+ * Pair with a base Markdown stylesheet of your choice, a highlight.js theme
+ * and katex/dist/katex.min.css. Colors are CSS variables so you can theme them.
+ */
+
+:root {
+  --mdg-border: #d0d7de;
+  --mdg-muted: #59636e;
+  --mdg-subtle-bg: #f6f8fa;
+  --mdg-note: #0969da;
+  --mdg-tip: #1a7f37;
+  --mdg-important: #8250df;
+  --mdg-warning: #9a6700;
+  --mdg-caution: #cf222e;
+  --mdg-error: #cf222e;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --mdg-border: #3d444d;
+    --mdg-muted: #9198a1;
+    --mdg-subtle-bg: #151b23;
+    --mdg-note: #4493f8;
+    --mdg-tip: #3fb950;
+    --mdg-important: #ab7df8;
+    --mdg-warning: #d29922;
+    --mdg-caution: #f85149;
+    --mdg-error: #f85149;
+  }
+}
+
+:root[data-theme='dark'] {
+  --mdg-border: #3d444d;
+  --mdg-muted: #9198a1;
+  --mdg-subtle-bg: #151b23;
+  --mdg-note: #4493f8;
+  --mdg-tip: #3fb950;
+  --mdg-important: #ab7df8;
+  --mdg-warning: #d29922;
+  --mdg-caution: #f85149;
+  --mdg-error: #f85149;
+}
+
+/* Alerts */
+.markdown-alert {
+  margin: 0 0 1em;
+  padding: 0.5em 1em;
+  border-left: 0.25em solid var(--mdg-alert-color, var(--mdg-border));
+}
+.markdown-alert > :last-child {
+  margin-bottom: 0;
+}
+.markdown-alert-title {
+  margin: 0 0 0.5em;
+  font-weight: 600;
+  color: var(--mdg-alert-color);
+}
+.markdown-alert-note { --mdg-alert-color: var(--mdg-note); }
+.markdown-alert-tip { --mdg-alert-color: var(--mdg-tip); }
+.markdown-alert-important { --mdg-alert-color: var(--mdg-important); }
+.markdown-alert-warning { --mdg-alert-color: var(--mdg-warning); }
+.markdown-alert-caution { --mdg-alert-color: var(--mdg-caution); }
+
+/* Task lists */
+.contains-task-list {
+  padding-left: 1.5em;
+}
+.task-list-item {
+  list-style: none;
+}
+.task-list-item-checkbox {
+  margin: 0 0.3em 0.2em -1.4em;
+  vertical-align: middle;
+}
+
+/* Front matter */
+.front-matter {
+  margin: 0 0 1em;
+  border: 1px solid var(--mdg-border);
+  border-radius: 6px;
+  padding: 0.5em 1em;
+}
+.front-matter > summary {
+  cursor: pointer;
+  color: var(--mdg-muted);
+  font-size: 0.9em;
+}
+.front-matter table {
+  margin: 0.5em 0 0;
+  border-collapse: collapse;
+}
+.front-matter th,
+.front-matter td {
+  padding: 0.2em 0.8em 0.2em 0;
+  text-align: left;
+  vertical-align: top;
+}
+.front-matter th {
+  color: var(--mdg-muted);
+  font-weight: 500;
+}
+.front-matter-error {
+  color: var(--mdg-error);
+  white-space: pre-wrap;
+}
+
+/* Math */
+.math-block,
+.math-display {
+  display: block;
+  margin: 1em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.math-block .katex-display {
+  margin: 0;
+}
+
+/* Mermaid */
+.mermaid-diagram {
+  margin: 0 0 1em;
+  overflow-x: auto;
+  text-align: center;
+}
+.mermaid-diagram:not([data-mermaid-rendered]) .mermaid-source {
+  text-align: left;
+  color: var(--mdg-muted);
+  background: var(--mdg-subtle-bg);
+  padding: 1em;
+  border-radius: 6px;
+}
+.mermaid-error-message {
+  text-align: left;
+  color: var(--mdg-error);
+  white-space: pre-wrap;
+}
+
+/* File references */
+a.file-ref {
+  text-decoration: none;
+  border-bottom: 1px dotted currentColor;
+}
+a.file-ref:hover {
+  border-bottom-style: solid;
+}
